@@ -1,0 +1,41 @@
+/* Reset default styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Sticky header */
+.header {
+  position: sticky; /* Sticky to top */
+  top: 0;
+  background-color: #333;
+  z-index: 1000;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  padding: 10px 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Main content to create vertical scroll */
+.content {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 50px;
+}

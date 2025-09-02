@@ -1,0 +1,93 @@
+/* ✅Rectangle animation (4 sides, 4 steps) in the home page import globals.css to the home page */
+.trace-rect {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 0 400;
+  animation: draw-rect 3s linear forwards;
+}
+
+@keyframes draw-rect {
+  0% {
+    stroke-dasharray: 0 400;
+  }
+  25% {
+    stroke-dasharray: 100 300;
+  } /* ✅first line */
+  50% {
+    stroke-dasharray: 200 200;
+  } /*✅ second line */
+  75% {
+    stroke-dasharray: 300 100;
+  } /*✅ third line */
+  100% {
+    stroke-dasharray: 400 0;
+  } /*✅ fourth line */
+}
+
+/* ✅Stars pop at each corner */
+.star {
+  opacity: 0;
+  fill: yellow;
+  font-size: 8px;
+  text-anchor: middle;
+  alignment-baseline: middle;
+  transform-origin: center;
+}
+
+.star-1 {
+  animation: star-pop 3s linear forwards;
+  animation-delay: 0.75s;
+}
+.star-2 {
+  animation: star-pop 3s linear forwards;
+  animation-delay: 1.5s;
+}
+.star-3 {
+  animation: star-pop 3s linear forwards;
+  animation-delay: 2.25s;
+}
+.star-4 {
+  animation: star-pop 3s linear forwards;
+  animation-delay: 3s;
+}
+
+@keyframes star-pop {
+  0%,
+  90% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+/*✅brandMarquee scrolling towards left*/
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  } /* ✅move by half because content is duplicated */
+}
+
+/* ✅Tailwind utility alias (so we can write animate-marquee) */
+.animate-marquee {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* ✅ Hide scrollbar but keep scrolling in the home page in the ScrollingBrands */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

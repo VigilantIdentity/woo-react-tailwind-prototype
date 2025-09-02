@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+// ✅ skipping google translator UI icons from the translation i.e., gave look more like a custom language dropdown
+#google_translate_element {
+  display: none;
+}
